@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-player">
+        <div class="sidebar">
+            <div class="menu">
+                <h2>Music</h2>
+                <nav>
+                    <ul>
+                        <li>Collection</li>
+                        <li>Radio</li>
+                        <li>Explore</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>Collection</h1>
+            <div class="song-list" id="song-list">
+                <!-- Songs will be loaded here -->
+            </div>
+        </div>
+    </div>
+    <div class="now-playing">
+        <div class="now-playing-img">
+            <img id="current-img" src="" alt="Album Art">
+        </div>
+        <div class="now-playing-info">
+            <h3 id="current-title">Song Title</h3>
+            <p id="current-artist">Song Artist</p>
+        </div>
+        <div class="progress-container">
+            <div class="progress">
+                <input type="range" id="progress-bar" value="0">
+            </div>
+            <div class="progress-time">
+                <span id="current-time">0:00</span>
+                <span id="total-time">0:00</span>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="prev">⏮️</button>
+            <button id="play-pause">⏯️</button>
+            <button id="next">⏭️</button>
+        </div>
+        <input type="range" id="volume-bar" value="80">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

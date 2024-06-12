@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #658b8e;
+  overflow: hidden;
+  margin-left: 1px;
+}
+
+
+.address-bar {
+  background: rgb(211,226,241);
+  background: linear-gradient(0deg, rgba(211,226,241,1) 0%, rgba(236,244,252,1) 100%); 
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #6a6e72;
+  position: absolute;
+margin-top: -1px;
+width: 97%;
+  height: 40px;
+  z-index: -2;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+.back-button {
+  background-color: rgb(214,227,241);
+  background-color: linear-gradient(0deg, rgba(214,227,241,1) 0%, rgba(237,244,251,1) 100%); 
+  border: 1px  solid  #afc1d2;
+  border-radius: 100%;
+  background-image: url('back_large.png');
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.tab {
+  overflow: hidden;
+  background-color: #658b8e
+}
+
+.tab button {
+  background-color: inherit;
+  text-align: left;
+  float: left;
+  border: none;
+  outline: none;
+  margin-top: 3px;
+  cursor: pointer;
+height: 30px;
+width: 130px;
+  font-size: 13px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 1px  solid  #6a6e7200;
+  border-right: 1px  solid  #6a6e7200;
+}
+
+.tab button:hover {
+  width: 130px;
+  border-left: 1px  solid  #6a6e72;
+  border-right: 1px  solid  #6a6e72;
+  cursor: default;
+}
+
+
+.tab button.active {
+  background: rgb(236,244,252);
+  background: linear-gradient(0deg, rgba(236,244,252,1) 0%, rgba(251,252,253,1) 100%); 
+  border-top: 1px  solid  #6a6e72;
+  border-left: 1px  solid  #6a6e72;
+  border-right: 1px  solid  #6a6e72;
+  border-bottom: 1px solid #ecf4fc;
+  z-index: 999;
+  height: 30px;
+width: 130px;
+}
+
+.tabcontent {
+  margin-top: 57px;
+  display: flex;
+  background-color: #fff;
+
+  border-top: none;
+height: 400px;
+width: 586px;
+}
+
+.text {
+    width: 320px;
+    height: 23px;
+    padding: 2px;
+    font-size: 14px;
+    margin-left: -18px;
+    border: 1px solid #afc1d2;
+    box-sizing: border-box;
+}
+
+
+        .twitter-profile-header {
+            background-color: #1DA1F2;
+            height: 115px;
+            position: relative;
+        }
+        .twitter-profile-picture {
+            width: 100px; 
+            height: 100px;
+            border-radius: 5%;
+            border: 2px solid rgb(179, 179, 179);
+            position: absolute;
+            top: 160px;
+            left: 20px;
+        }
+        .twitter-profile-container {
+            padding: 60px 20px 20px 20px;
+        }
+        .twitter-profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .twitter-profile-bio {
+            margin: 10px 0;
+            color: #657786;
+        }
+        .twitter-follow-button {
+          position: absolute;
+top: 220px;
+background-color: rgb(24,124,185);
+background: linear-gradient(0deg, rgba(24,124,185,1) 0%, rgba(29,161,242,1) 100%); 
+            color: white;
+            padding: 10px 20px;
+            border: 1px solid #115885;
+            border-radius: 5px;
+            right: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .twitter-follow-button:hover {
+            background-color: #0d95e8;
+        }
+
+        #osu-sidebar {
+            width: 125px;
+            height: 100%;
+            background-color: #efe9f6;
+            padding: 20px;
+            float: left;
+            font-family: Tahoma, sans-serif;
+        }
+        #osu-profile-icon {
+            width: 120px;
+            height: 120px;
+            left: 100%;
+            border-radius: 1px;
+            border: 2px solid #FFF;
+            background-color: #ccc;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 10px;
+        }
+        #osu-user-info {
+
+            font-family: Tahoma, sans-serif;
+        }
+        #osu-flag {
+            width: 20px;
+            height: 12px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        #osu-supporter-status {
+
+            margin-right: 5px;
+            vertical-align: middle;
+            height: 12px;
+        }
+        .osu-icon {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+        .osu-add {
+          color: #008106;
+          font-weight:600;
+          text-decoration: none;
+          font-size: 12px;
+        }
+
+        .github-top {
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+            height: 25px;
+            display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.github-logo {
+  height: 100%;
+}
+
+.github-links {
+  display: flex;
+  gap: 20px;
+}
+
+.github-links a {
+  font-weight:700;
+  text-decoration: none;
+  color: #535353; 
+}
+
+.github-links a:hover {
+  color: #5791cb;
+}
+
+
+#github-sidebar {
+            width: 125px;
+            height: 50%;
+            background-color: #ececec;
+            padding: 20px;
+left: 1px;
+bottom: 0px;
+position: absolute;
+        }
+
+        .github-follow-button {
+          position: absolute;
+top: 185px;
+background: rgb(97,177,69);
+background: linear-gradient(0deg, rgba(97,177,69,1) 0%, rgba(136,219,107,1) 100%); 
+            color: white;
+            padding: 3px 50px;
+            border: 1px solid #5ca941;
+            border-radius: 3px;
+            right: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .top-bar {
+            background-color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+        }
+        .top-bar img {
+            height: 30px;
+        }
+        .upload {
+            display: flex;
+            align-items: center;
+        }
+        .upload button {
+            padding: 7px 12px;
+            border-radius: 2px;
+            cursor: pointer;
+            margin-right: 5px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+.uploadb {
+  background: rgb(252,252,252);
+            background: linear-gradient(0deg, rgba(252,252,252,1) 0%, rgba(249,249,249,1) 100%); 
+            border: 1px solid #d3d3d3;
+}
+        .signin {
+          background: rgb(63,118,183);
+          background: linear-gradient(0deg, rgba(63,118,183,1) 0%, rgba(82,131,190,1) 100%); 
+          border: 1px solid #3f76b7;
+        }
+
+        .youtube-profile-container {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px ;
+  background: rgb(35,35,35);
+  background: linear-gradient(0deg, rgba(35,35,35,1) 0%, rgba(66,66,66,1) 100%); 
+  border: 1px solid #e5e5e5;
+            display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.youtube-profile-picture {
+  width: 60px;
+  height: 60px;
+   border: 1px solid rgb(179, 179, 179);
+}
+
+.youtube-profile-details {
+  display: flex;
+  margin-right: 120px;
+}
+
+.youtube-profile-name {
+  position: relative;
+  font-size: 24px;
+color: white;
+left: 5px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.youtube-profile-description {
+  margin: 10px 0;
+  color: #657786;
+}
+
+.youtube-subscribe-button {
+  background: rgb(223,223,223);
+  background: linear-gradient(0deg, rgba(223,223,223,1) 0%, rgba(243,243,243,1) 100%); 
+  color: #5c6068;
+  position: relative;
+  padding: 5px 20px;
+  left: 15px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.stats {
+  font-size: 16px;
+  font-weight: 500;
+  color: #c0bfbe;
+            text-align: right;
+            margin-right: 20px;
+        }
+        .stats p {
+            margin: 5px 0;
+        }
+</style>
+</head>
+<body>
+
+<div class="browser">
+
+  <div class="tab">
+    <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Twitter')">Twitter</button>
+    <button class="tablinks" onclick="openTab(event, 'Youtube')">Youtube</button>
+    <button class="tablinks" onclick="openTab(event, 'Github')">Github</button>
+    <button class="tablinks" onclick="openTab(event, 'osu!')">osu!</button>
+  </div>
+    <div class="address-bar">
+    <a class="back-button"  ></a>
+    <input type="text" class="text" placeholder="        Enter URL">
+  </div>
+
+  <div id="Twitter" class="tabcontent">
+    <div class="twitter-profile-card">
+      <div class="twitter-profile-header"></div>
+      <div class="twitter-profile-container">
+          <img src="https://pbs.twimg.com/profile_images/1797734834510438400/lv-Wtaao_400x400.jpg" alt="Profile Picture" class="twitter-profile-picture">
+          <div class="twitter-profile-name">@w81056398</div>
+          <div class="twitter-profile-bio">
+personal acc: @kolejker
+<br>
+          </div>
+          <a href="https://twitter.com/w81056398" class="twitter-follow-button" target="_blank">Follow</a>
+      </div>
+  </div>
+  </div>
+
+  <div id="Youtube" class="tabcontent">
+    <div class="top-bar">
+      <img src="yt.png" alt="YouTube Logo" height="30">
+      <div class="upload">
+          <button class="uploadb" >Upload</button>
+          <button class="signin">Sign in</button>
+      </div>
+  </div>
+    <div class="youtube-profile-container">
+      <img src="https://yt3.googleusercontent.com/umodiHSHuMwrvlNXvcO62a6gpJUhzQKIUSUerS1p5Q1DfYh1yiSa7T6m-gWLPd0xTrjb6to1TQ=s176-c-k-c0x00ffffff-no-rj" alt="Profile Picture" class="youtube-profile-picture">
+      <div class="youtube-profile-details">
+        <div class="youtube-profile-name">kolik</div>
+        <a class="youtube-subscribe-button" href="https://www.youtube.com/channel/UCpVxNtisM_7UB8cftP7B4_w" target="_blank" >Subscribe</a>
+      </div>
+      <div class="stats">
+        <p>108 subscribers</p>
+        <p>5618 video views</p>
+    </div>
+    </div>
+    
+  </div>
+
+  <div id="Github" class="tabcontent">
+<div class="github-top"><img src="github-logotype.png" style="height: 100%;">
+  <div class="github-links">
+    <a href="#">Explore GitHub</a>
+    <a href="#">Search</a>
+    <a href="#">Features</a>
+    <a href="#">Blog</a>
+  </div>
+  <div id="github-sidebar">
+    <div id="osu-profile-icon"><img src="https://avatars.githubusercontent.com/u/55196465" style="height: 100%;">
+      <div class="twitter-profile-name" style="font-size: 18px; margin-top: 6px; font-weight: 600;">@warenwakolj</div>
+      <a href="https://github.com/warenwakolj" class="github-follow-button" target="_blank">Follow</a>
+    </div>
+    </div>
+</div>
+</div>
+
+  </div>
+  <div id="osu!" class="tabcontent">
+    <div id="osu-sidebar">
+      <div id="osu-profile-icon"><img src="https://a.ppy.sh/14498926" style="height: 100%;">
+      </div>
+      <div id="osu-user-info">
+          <p style="font-size: 20px; margin: 0px 0px 5px  0px ; ">wrn81056</p>
+          <img src="fr.gif" alt="User Flag" id="osu-flag">
+          <img src="supporter.png" alt="Supporter Status" id="osu-supporter-status">
+          <p style="            font-size: 12px;"><span class="osu-icon">🕒</span>5 years ago</p>
+          <a href="https://osu.ppy.sh/users/wrn81056" class="osu-add" target="_blank">Become Friends!</a>
+      </div>
+  </div>
+  <img src="page.png" style="height: 100%;">
+  </div>
+
+</div>
+
+<script>
+document.getElementById("defaultOpen").click();
+
+function openTab(evt, TabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(TabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html>

@@ -1,0 +1,317 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    overflow: hidden;
+    background-image: url('windows.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none; 
+}
+* {
+    cursor: default;
+}
+img {
+    pointer-events: none;
+}
+.portfolio {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.tbicon {
+  margin-left: 7px;
+  margin-top: 5px;
+}
+
+.windows {
+  position: fixed;
+
+  transform: translate(-60%, -60%);
+  top: 25%;
+  left: 25%;
+}
+
+.notepad {
+    top: 25%;
+    left: 25%;
+}
+.web {
+    top: 50%;
+    left: 50%;
+}
+.window {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+    background-color: #658b8e;
+    border: 1px solid #bcd4d6;
+    outline: 1px solid #324245;
+
+  transform: translate(-50%, -50%);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.window.opened {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.window.closing {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+.content {
+    margin:  0px 6px;
+    border: 1px solid rgba(60, 73, 77, 255);
+    background-color: #f0f0f0;
+    height: calc(100% - 37px);
+}
+.title-bar {
+    background-color: #658b8e;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.title {
+  margin: auto;
+  font-size: 15px;
+}
+
+.close-btn {
+    height: 20px;
+    width: 46px;
+    margin-top: -11px;
+    margin-right: 6px;
+  
+    background-image: url('explorer/close-normal.png');
+}
+
+.close-btn:hover {
+    background-image: url('explorer/close-hover.png');
+}
+.tbicon img {
+  width: 20px;
+  height: 20px;
+}
+
+.explorer-div {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    position: absolute;
+    bottom: 0%;
+    border-top: 1px solid #537f83;
+    outline: 1px solid #0e1a17;
+    left: 0%;
+    background-color: #01434d;
+    width: 100%;
+    height: 38px;
+}
+
+#start-button {
+    background-image: url('explorer/start_normal.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    width: 62px;
+    height: 44px;
+}
+
+#start-button:hover {
+    background-image: url('explorer/start_hover.png');
+}
+
+#start-button:active,
+#start-button.active {
+    background-image: url('explorer/start_clicked.png');
+}
+
+#start-menu {
+    display: none;
+    position: absolute;
+    min-width: 300px;
+    min-height: 400px;
+    border: 1px solid #537f83;
+    outline: 1px solid #0e1a17;
+    left: 0%;
+    background-color: #01434d;
+    z-index: 1;
+    bottom: 40px;
+}
+ .profileic {
+    margin: 10px;
+    height: 70px;
+    width: 70px;
+    border: 1px solid #dbdbdb;
+    background-color: #424242;
+ }
+
+ .line {
+    margin: 10px;
+    Width: 280px;
+    height: 1px;
+    background-color: #d1e1ef;
+ }
+
+ .name {
+    left: 100px;
+    top: 10px;
+    font-size: 28px;
+    position: absolute;
+    color: white;
+ }
+#start-menu a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#start-menu a:hover {
+    background-color: #f1f1f133;
+}
+
+.context-menu {
+    font-family: 'Segoe UI', sans-serif;
+    display: none;
+    z-index: 2;
+    position: absolute;
+    background-color: white;
+    width: 284px;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: scale(0.9);
+    font-size: 12px;
+}
+
+.context-menu.open {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+  
+}
+
+.context-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.context-menu li {
+    padding: 4px 34px;
+  
+}
+
+.context-menu li:hover {
+    padding: 2px 32px;
+    background-color: #d1e1ef;
+    border: 1px solid #78ace2;
+  
+}
+
+.icon-grid {
+    z-index: 0;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    background: transparent;
+}
+
+.icon {
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.icon img {
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+}
+
+.icon span {
+    display: block;
+    margin-top: 6px;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    color: white;
+    font-size: 12px;
+  
+}
+
+.icon:hover {
+    background-color: rgba(0, 120, 215, 0.2);
+    border: 1px solid #78ace2;
+}
+
+.icon:active {
+    background-color: rgba(0, 120, 215, 0.4);
+}
+
+.header {
+    font-family: 'Segoe UI light', sans-serif;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.button-base {
+    font-family: 'Segoe UI', sans-serif;
+    height: 22px;
+    width: 84px;
+    background: linear-gradient(0deg, rgba(229,229,229,1) 0%, rgba(240,240,240,1) 100%);
+    color: rgb(0, 0, 0);
+    border: 1px solid #acacac;
+
+    text-align: center;
+    font-size: 12px;
+    margin-left: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.button-base:hover {
+    background: linear-gradient(0deg, rgba(221, 237, 252, 1) 0%, rgba(235, 244, 252, 1) 100%);
+    border-color: #7eb4ea;
+}
+
+#taskbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;}
+
+.taskbar-icon {
+    position: relative;
+    margin-top:  -4px;
+    margin-left: 10px;
+    height: 100%;
+}
+
+.time-date {
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.taskbar-icon img {
+    width: 14px;
+    height: 40px;
+}
+
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warendows</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="customContextMenu" class="context-menu window window-base">
+        <ul>
+            <li>View</li>
+            <li>Sort By</li>
+            <li>Refresh</li>
+            <li>Paste</li>
+            <li>Copy</li>
+            <li>Display Settings</li>
+            <li id="changeBackground">Personalize</li>
+        </ul>
+    </div>
+    <div id="start-menu">
+        <div class="profileic"></div>
+        <div class="name">User </div>
+        <a href="#">My projects</a>
+        <div class="line"></div>
+        <a href="#">osu!classic web</a>
+        <a href="#">ASTG</a>
+        <a href="#">Miner</a>
+    </div>
+    
+    <div id="explorerDiv" class="explorer-div">
+      <button id="start-button" onclick="toggleMenu()"></button>
+      <div id="taskbar-right">
+        <div class="time-date">
+          <div id="time">12:00 PM</div>
+          <div id="date">06/07/2024</div>
+        </div>
+          <div class="taskbar-icon"><img src="explorer/desktop_icon.png" alt="Show Desktop"></div>
+
+          </div>
+    </div>
+<div class="portfolio">
+    <div id="iconGrid" class="icon-grid">
+    <div class="icon" onclick="toggleWindow('window1')"  draggable="true" ondragstart="dragStart(event)">
+      <img src="icons/bin.png" alt="Bin">
+      <span>Trash</span>
+    </div>
+    <div class="icon" onclick="toggleWindow('window2')"  draggable="true" ondragstart="dragStart(event)">
+      <img src="icons/txt.png" alt="Text File">
+      <span>aboutme!!.txt</span>
+  </div>
+  <div class="icon" onclick="toggleWindow('window3')"  draggable="true" ondragstart="dragStart(event)">
+    <img src="icons/Internet.png" alt="Internet">
+    <span>My Socials</span>
+</div>
+
+    <div class="icon" onclick="toggleWindow('window4')"  draggable="true" ondragstart="dragStart(event)">
+      <img src="icons/music.png" alt="Music">
+      <span>Music</span>
+    </div>
+
+    <div class="icon" onclick="toggleWindow('window5')"  draggable="true" ondragstart="dragStart(event)">
+        <img src="icons/paint.png" alt="Edit">
+        <span>Personalize</span>
+    </div>
+    <div class="icon" onclick="toggleWindow('window6')"  draggable="true" ondragstart="dragStart(event)">
+      <img src="icons/EventVwr.png" alt="Edit">
+      <span>Blog Viewer</span>
+  </div>
+    <div class="icon" onclick="location.href='mobile/index.html'"  draggable="true" ondragstart="dragStart(event)">
+      <img src="icons/wp.png" alt="Edit">
+      <span>Mobile Page</span>
+  </div>
+</div>
+</div>
+<div class="windows">
+  <div class="window" id="window1" style="height: 200px; width: 270px; position: absolute;">
+    <div class="title-bar" id="Bin-title-bar">
+      <div class="tbicon"><img src="icons/bin.png"></div>
+      <div class="title">Trash</div>
+      <div class="close-btn" onclick="closeWindow('window1')" id="stopResetBtn"></div>
+    </div>
+    <div class="content" style=" padding: 10px; height: 144px;">
+my skill :(
+    </div>
+  </div>
+  <div class="window" id="window4" style="height: 650px; width: 1162px; position: absolute;">
+    <div class="title-bar" id="Music-title-bar">
+      <div class="tbicon"><img src="icons/music.png"></div>
+      <div class="title">Music Player</div>
+      <div class="close-btn" onclick="closeWindow('window4')"></div>
+    </div>
+    <div class="content" style="border: 0px;">
+      <iframe src="musicplayer/index.html"  style="margin-top: 0px; height: 614px; width: 1150px; border:none;  " ></iframe>
+    </div>
+  </div>
+ 
+  <div class="window web" id="window3" style="height: 400px; width: 600px; position: absolute;">
+    <div class="title-bar" id="window3-title-bar">
+      <div class="tbicon"><img src="icons/Internet.png"></div>
+      <div class="title">Firefox</div>
+      <div class="close-btn" onclick="closeWindow('window3')"></div>
+    </div>
+    <div class="content" style="border: 0px;">
+      <iframe src="webtest.html"  style="margin-top: -7px; height: 370px; width: 588px; border:none;  " ></iframe>
+    </div>
+  </div>
+  <div class="window notepad" id="window2" style="height: 600px; width: 750px; position: absolute;">
+    <div class="title-bar" id="Notepad-title-bar">
+      <div class="tbicon"><img src="icons/Notepad.png" ></div>
+      <div class="title">aboutme!!.txt - Notepad</div>
+      <div class="close-btn" onclick="closeWindow('window2')"></div>
+    </div>
+    <div class="content">
+<div style="padding: 7px;">
+        Tip: Click the Start button to see my projects!
+        <br>
+        <br>
+        Hello, I'm a 17 year old Compsci Student from Vienne, France
+          <br> 
+          I like to play games, bike and code. (lol)
+          <br>
+          I'm currently trying to learn Chinese (failing) and Russian.
+          <br>
+          If you want to contact me, do it through Twitter, <a href="mailto:slimestwin@gmail.com">E-Mail</a> or Discord (@w81056398).
+          <br>
+          <br>
+          Here are some games I'm into:
+<br>
+            - Danmaku style games: Touhou, Mushihimesama Futari
+            <br>
+            - Rhythm games: Jubeat, DJMAX, Chuni, Pump It Up... osu!.......
+            <br>
+            - RPG Maker style games: Ao Oni, Wadanohara, Zeno Remake, witch's Heart
+            <br>
+            - Shooter games: Call of Duty BO2, MW3, Cs2, CS:Source
+            <br>
+            - Simulation games: Euro Truck Simulator, Cities Skylines, Asseto Corsa
+            <br>
+            <s>- Gacha games: Honkai Star Rail, Blue Archive, WUWA, Touhou Lost world</s> let me forget
+            <br>
+            <br>
+            and of course, Pokémon
+            <br>
+            <br>
+            I know the following coding languages:
+            <br>
+            C#, JavaScript, C++, Python, and a tiny bit of ASM
+            <br>
+            <br>
+            And the following spoken languages:
+            <br>
+            English, French, Malaysian, German, Russian, Chinese
+            <br>
+            <br>
+            I like reading books about history and also detective stories mostly. <s>and fanfics on AO3 XD</s>
+            <br>
+            <br>
+            As you might've noticed, I really like computers, both hardware and software.
+          </div>
+    </div>
+  </div>
+  <div class="window" id="window5" style="height: 400px; width: 500px; position: absolute;">
+    <div class="title-bar" id="window5-title-bar">
+      <div class="tbicon"><img src="icons/paint.png"></div>
+      <div class="title">Personalize</div>
+      <div class="close-btn" onclick="closeWindow('window5')"></div>
+    </div>
+    <div class="content">
+      <div id="customizationPanel" class="customization-panel">
+        <div class="header">
+            Customize Background...
+        </div>
+        <input type="file" id="backgroundInput" accept="image/*" class="button button-base">
+        <button id="applyBackground" class="button button-base">Apply</button>
+</div>
+    </div>
+  </div>
+  <div class="window" id="window6" style="height: 700px; width: 1020px; position: absolute;">
+    <div class="title-bar" id="window6-title-bar">
+      <div class="tbicon"><img src="icons/EventVwr.png"></div>
+      <div class="title">Blog Viewer</div>
+      <div class="close-btn" onclick="closeWindow('window6')"></div>
+    </div>
+    <div class="content" style="border: 0px;">
+      <iframe src="MDVIEWER/INDEX.HTML"  style="margin-top: 0px; height: 662px; width: 1008px; border:none; position:absolute;  " ></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="detect.js"></script>
+<script src="wm.js"></script>
+<script src="contextmenu.js"></script>
+<script src="explorer.js"></script>
+</body>
+</html>
