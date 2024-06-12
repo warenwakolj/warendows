@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>UI Concept</title>
     <style>
         body {
@@ -97,13 +98,19 @@
         }
 
         .main-screen, .projects-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
-        }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.projects-screen {
+    transform: translateX(100vw);
+}
+
 
         .projects-screen {
             transform: translateX(100%);
@@ -221,13 +228,13 @@
             <div class="item rectangle" style="background-image:url('img/riffmaster.jpg'); background-size: cover;">                
                 <h1 class="tiletitle" style=" width: 300px; font-size: 30px; text-shadow: 0 0 10px #00000060;">About me</h1>
             </div>
-            <div class="item square" style="background-image:url('img/nduWHY.png'); background-size: cover;">
+            <div class="item square" style="background-image:url('img/night.jpg'); background-size: cover; background-position: center;">
                 <h1 class="tiletitle"></h1>
             </div>
             <div class="item square"><h1 class="tiletitle">I'm a 17 year old IT Student from France, I like to Game, Bike and Code</h1></div>
 
             <div class="item square"><h1 class="tiletitle">I speak Malaysian, English, French, German, Russian and some Chinese</h1></div>
-            <div class="item square" style="background-image:url; background-size: cover;">
+            <div class="item square" style="background-image:url('img/yu.jpg'); background-size: cover;">
                 <h1 class="tiletitle"></h1>
             </div>
 
@@ -286,15 +293,16 @@
         </ul>
     </div>
     <script>
-        function showProjects() {
-            document.querySelector('.main-screen').style.transform = 'translateX(-100%)';
-            document.querySelector('.projects-screen').style.transform = 'translateX(0)';
-        }
+function showProjects() {
+    document.querySelector('.main-screen').style.transform = 'translateX(-100vw)';
+    document.querySelector('.projects-screen').style.transform = 'translateX(0)';
+}
 
-        function hideProjects() {
-            document.querySelector('.main-screen').style.transform = 'translateX(0)';
-            document.querySelector('.projects-screen').style.transform = 'translateX(100%)';
-        }
+function hideProjects() {
+    document.querySelector('.main-screen').style.transform = 'translateX(0)';
+    document.querySelector('.projects-screen').style.transform = 'translateX(100vw)';
+}
+
     </script>
 </body>
 </html>
