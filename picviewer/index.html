@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #111111;
+            overflow-y: hidden;
+
+            background-size: cover;
+            -webkit-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none;
+            user-select: none; 
+        }
+
+        h1 {
+            margin-left: 35px;
+            font-weight: 100;
+            color: #fff;
+            font-size: 50px;
+        }
+
+        .gallery {
+            margin-left: 40px;
+        }
+
+        .container {
+            height: 525px;
+            overflow-x: scroll;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: -27px;
+            overflow-x: visible;
+            box-sizing: border-box;
+        }
+
+        .row figure {
+            margin-right: -30px; 
+            text-align: center;
+        }
+
+        .row img {
+            height: 150px;
+            object-fit: contain;
+            cursor: pointer; 
+        }
+
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .caption {
+            color: #fff;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <h1>Image Gallery</h1>
+        <div class="container">
+            <div class="row">
+                <figure>
+                    <a href="images/setup.jpg" class="gallery-link">
+                        <img src="images/setup.jpg" alt="My current setup">
+                        <div class="caption">My current setup</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/dobro.png" class="gallery-link">
+                        <img src="images/dobro.png" alt="DOBRO DOSHLI">
+                        <div class="caption">Dobro Doshli))) #bulgaria</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/flowee.jpg" class="gallery-link">
+                        <img src="images/flowee.jpg" alt="flowee">
+                        <div class="caption">Lavande</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/!!.jpg" class="gallery-link">
+                        <img src="images/!!.jpg" alt="!!">
+                        <div class="caption">My best picture probably..</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/kit.png" class="gallery-link">
+                        <img src="images/kit.png" alt="Cat">
+                        <div class="caption">Cat</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/aki.png" class="gallery-link">
+                        <img src="images/aki.png" alt="R U STUPID">
+                        <div class="caption">AKIIIIIIII</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/7install.jpg" class="gallery-link">
+                        <img src="images/7install.jpg" alt="7install">
+                        <div class="caption">Old pc</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/7vm.jpg" class="gallery-link">
+                        <img src="images/7vm.jpg" alt="7vm">
+                        <div class="caption">Pic of my windows 7 vm</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/pattern.png" class="gallery-link">
+                        <img src="images/pattern.png" alt="fav osu pattern">
+                        <div class="caption">Cleanest thing ive ever done, it lives rent free in my head XD</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/beautifulsky.jpg" class="gallery-link">
+                        <img src="images/beautifulsky.jpg" alt="beautifulsky">
+                        <div class="caption">Some pic i took AGAIN</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/bnuy.jpg" class="gallery-link">
+                        <img src="images/bnuy.jpg" alt="bnuy">
+                        <div class="caption">Im such a coool bunny</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/books.jpg" class="gallery-link">
+                        <img src="images/books.jpg" alt="books">
+                        <div class="caption">Some of my fav books</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/cateating.jpg" class="gallery-link">
+                        <img src="images/cateating.jpg" alt="cateating">
+                        <div class="caption">ME (i  eat cats)</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/chuni1.jpg" class="gallery-link">
+                        <img src="images/chuni1.jpg" alt="chuni1">
+                        <div class="caption">Chuni score</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/donlowad.png" class="gallery-link">
+                        <img src="images/donlowad.png" alt="donlowad">
+                        <div class="caption">INTERNET EXPLORER</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/epictutoral.png" class="gallery-link">
+                        <img src="images/epictutoral.png" alt="epictutoral">
+                        <div class="caption">graj w osu</div>
+                    </a>
+                </figure>
+
+
+                <figure>
+                    <a href="images/gay.jpg" class="gallery-link">
+                        <img src="images/gay.jpg" alt="gay">
+                        <div class="caption">me</div>
+                    </a>
+                </figure>
+
+                <figure>
+                    <a href="images/linus.jpg" class="gallery-link">
+                        <img src="images/linus.jpg" alt="linus">
+                        <div class="caption">linus sigma</div>
+                    </a>
+                </figure>
+            </div>
+            <div class="row">
+                <figure>
+                    <a href="images/green.jpg" class="gallery-link">
+                        <img src="images/green.jpg" alt="green">
+                        <div class="caption">My second best picture</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/phone.jpg" class="gallery-link">
+                        <img src="images/phone.jpg" alt="phone">
+                        <div class="caption">My curent phone,  I sleep a bit late haha</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/mail.png" class="gallery-link">
+                        <img src="images/mail.png" alt="mail">
+                        <div class="caption">d</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/image2.jpg" class="gallery-link">
+                        <img src="images/image2.jpg" alt="Image 2">
+                        <div class="caption">Bladee - Into Dust</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/flow.jpg" class="gallery-link">
+                        <img src="images/flow.jpg" alt="flow">
+                        <div class="caption">Flowers at the mountains</div>
+                    </a>
+                </figure>
+
+                <figure>
+                    <a href="images/oldfolder.jpg" class="gallery-link">
+                        <img src="images/oldfolder.jpg" alt="oldfolder">
+                        <div class="caption">i miss 2019</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/messag.png" class="gallery-link">
+                        <img src="images/messag.png" alt="messag">
+                        <div class="caption">weirdo freak</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/mountains.jpg" class="gallery-link">
+                        <img src="images/mountains.jpg" alt="mountains">
+                        <div class="caption">Mountains again..</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/nowhere.jpg" class="gallery-link">
+                        <img src="images/nowhere.jpg" alt="nowhere">
+                        <div class="caption">My home</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/nuke.jpg" class="gallery-link">
+                        <img src="images/nuke.jpg" alt="nuke">
+                        <div class="caption">stupid</div>
+                    </a>
+                </figure>
+
+                <figure>
+                    <a href="images/pays.jpg" class="gallery-link">
+                        <img src="images/pays.jpg" alt="pays">
+                        <div class="caption">Les montagnes, encore</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/pc.png" class="gallery-link">
+                        <img src="images/pc.png" alt="pc">
+                        <div class="caption">ONLY REALM PPL WILL GET IT XDD</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/pctecnnique.jpg" class="gallery-link">
+                        <img src="images/pctecnnique.jpg" alt="pctecnnique">
+                        <div class="caption">How to stop gpu sag:</div>
+                    </a>
+                </figure>
+
+                <figure>
+                    <a href="images/mesages.png" class="gallery-link">
+                        <img src="images/mesages.png" alt="mesages">
+                        <div class="caption">what a stupid</div>
+                    </a>
+                </figure>
+
+                <figure>
+                    <a href="images/po.jpg" class="gallery-link">
+                        <img src="images/po.jpg" alt="po">
+                        <div class="caption">pou died</div>
+                    </a>
+                </figure>
+            </div>
+            <div class="row">
+
+                <figure>
+                    <a href="images/rain.jpg" class="gallery-link">
+                        <img src="images/rain.jpg" alt="rain">
+                        <div class="caption">Rain</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/SLAYYYYYYYY.png" class="gallery-link">
+                        <img src="images/SLAYYYYYYYY.png" alt="queen">
+                        <div class="caption">I LUV U LOBCO</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/warlord.jpg" class="gallery-link">
+                        <img src="images/warlord.jpg" alt="warlord">
+                        <div class="caption">Yung Lean - Warlord (Deluxe)</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/hack.jpg" class="gallery-link">
+                        <img src="images/hack.jpg" alt="hack">
+                        <div class="caption">PASTED CSS HACK LMAO</div>
+                    </a>
+                </figure>
+
+                <figure>
+                    <a href="images/jumpinmalaysia.jpg" class="gallery-link">
+                        <img src="images/jumpinmalaysia.jpg" alt="jumpinmalaysia">
+                        <div class="caption">I LOVE JUMPSTYLE</div>
+                    </a>
+                </figure>
+
+                <figure>
+                    <a href="images/sky.jpg" class="gallery-link">
+                        <img src="images/sky.jpg" alt="sky">
+                        <div class="caption">Night Sky</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/yom.jpg" class="gallery-link">
+                        <img src="images/yom.jpg" alt="Halozy">
+                        <div class="caption">Fav Halozy Album <3</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/station.jpg" class="gallery-link">
+                        <img src="images/station.jpg" alt="station">
+                        <div class="caption">Train station</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/PUFFED.jpg" class="gallery-link">
+                        <img src="images/PUFFED.jpg" alt="PUFFED">
+                        <div class="caption">Attempt at eclairs</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/stupid.jpg" class="gallery-link">
+                        <img src="images/stupid.jpg" alt="stupid">
+                        <div class="caption">Dumb</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/train.jpg" class="gallery-link">
+                        <img src="images/train.jpg" alt="train">
+                        <div class="caption">Train</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/lobnste.png" class="gallery-link">
+                        <img src="images/lobnste.png" alt="lobster">
+                        <div class="caption">crab</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/train2.jpg" class="gallery-link">
+                        <img src="images/train2.jpg" alt="train2">
+                        <div class="caption">ANOTHER TRAIN</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/trees.jpg" class="gallery-link">
+                        <img src="images/trees.jpg" alt="trees">
+                        <div class="caption">picture of trees</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/vienne.jpg" class="gallery-link">
+                        <img src="images/vienne.jpg" alt="vienne">
+                        <div class="caption">Vienne, my hometown, viewed from St Romain en Gal</div>
+                    </a>
+                </figure>
+
+                <figure>
+                    <a href="images/xd.png" class="gallery-link">
+                        <img src="images/xd.png" alt="xd">
+                        <div class="caption">XD STOE</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/yapiz.jpg" class="gallery-link">
+                        <img src="images/yapiz.jpg" alt="yapiz">
+                        <div class="caption">me irl</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/raisin.jpg" class="gallery-link">
+                        <img src="images/raisin.jpg" alt="raisin">
+                        <div class="caption">Raisin</div>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="images/pink.jpg" class="gallery-link">
+                        <img src="images/pink.jpg" alt="pink">
+                        <div class="caption">I miss u, papa franku</div>
+                    </a>
+                </figure>
+                <div>
+                    <h1 style=" width: 600px; height: 100px; margin-left: 50px;">More to be added, later</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Overlay markup -->
+    <div class="overlay" id="overlay">
+        <img id="overlay-img" src="" alt="Overlay Image">
+        <div id="overlay-caption" class="caption"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('overlay');
+            const overlayImg = document.getElementById('overlay-img');
+            const overlayCaption = document.getElementById('overlay-caption');
+            const galleryLinks = document.querySelectorAll('.gallery-link');
+
+            galleryLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); 
+                    const imgUrl = this.getAttribute('href');
+                    const imgCaption = this.querySelector('.caption').innerText;
+                    overlayImg.setAttribute('src', imgUrl);
+                    overlayCaption.innerText = imgCaption;
+                    overlay.style.display = 'flex';
+                    overlayCaption.style.display = 'block'; 
+                });
+            });
+
+            overlay.addEventListener('click', function() {
+                overlay.style.display = 'none'; 
+                overlayCaption.style.display = 'none'; 
+            });
+        });
+    </script>
+</body>
+</html>
