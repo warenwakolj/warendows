@@ -59,6 +59,10 @@ img {
     transform: scale(0.9);
 }
 
+h1 {
+    font-weight: 200;
+}
+
 .window.opened {
     opacity: 1;
     transform: scale(1);

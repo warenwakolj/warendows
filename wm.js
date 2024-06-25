@@ -1,6 +1,8 @@
 let highestZIndex = 1;
 let lowestZIndex = 0;
 
+toggleWindow('welcomewindow')
+
 function bringToFront(window) {
   highestZIndex++;
   window.style.zIndex = highestZIndex;
